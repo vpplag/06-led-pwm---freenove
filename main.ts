@@ -17,12 +17,14 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    while (state) {
-        for (let counter = 0; counter <= 500; counter++) {
+    for (let counter = 0; counter <= 500; counter++) {
+        if (state) {
             pins.analogWritePin(AnalogPin.P1, counter)
             basic.pause(1)
         }
-        for (let counter = 0; counter <= 500; counter++) {
+    }
+    for (let counter = 0; counter <= 500; counter++) {
+        if (state) {
             pins.analogWritePin(AnalogPin.P1, 500 - counter)
             basic.pause(1)
         }
