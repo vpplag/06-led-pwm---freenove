@@ -17,7 +17,7 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (button_pressed) {
-        for (let counter = 0; counter <= 500; counter++) {
+        for (let counter = 0; counter <= 300; counter++) {
             pins.analogWritePin(AnalogPin.P1, counter)
             basic.pause(1)
             if (!(button_pressed)) {
@@ -25,8 +25,8 @@ basic.forever(function () {
                 break;
             }
         }
-        for (let counter = 0; counter <= 500; counter++) {
-            pins.analogWritePin(AnalogPin.P1, 500 - counter)
+        for (let counter = 0; counter <= 300; counter++) {
+            pins.analogWritePin(AnalogPin.P1, 300 - counter)
             basic.pause(1)
             if (!(button_pressed)) {
                 pins.analogWritePin(AnalogPin.P1, 0)
